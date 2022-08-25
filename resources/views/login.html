@@ -8,6 +8,81 @@
         <link rel="stylesheet" href="../../public/css/style.css" />
     </head>
     <body class="bg-gradient">
-        <h1 class="text-white text-5xl">awdawsdfcwasfaws</h1>
+        <!-- Navbar -->
+        <nav class="shadow-sm px-24 py-2 bg-white">
+            <div class="flex justify-between items-center">
+                <div>
+                    <img
+                        src="../../public/asset/logo.png"
+                        alt="Digitize"
+                        class="h-10"
+                    />
+                </div>
+                <ul class="text-purple flex items-center gap-8 text-sm">
+                    <li>Home</li>
+                    <li>Art</li>
+                    <li>Song</li>
+                    <li>Dance</li>
+                    <li class="text-white bg-purple py-1 px-4 rounded-lg ml-4">
+                        Sign In
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Content Wrapper -->
+        <div
+            class="flex justify-center items-center content-center h-screen -mt-16"
+        >
+            <div
+                class="flex flex-col gap-8 justify-center items-center bg-white h-fit w-fit rounded-3xl px-12 py-8 w-[32rem]"
+            >
+                <div>
+                    <h1 class="text-purple text-4xl font-semibold">Login</h1>
+                </div>
+                <form action="" class="flex flex-col gap-8 w-full">
+                    <div class="flex flex-col gap-6">
+                        <div class="flex flex-col gap-1">
+                            <label
+                                for="email"
+                                class="text-purple text-xl font-semibold"
+                                >Email</label
+                            >
+                            <input
+                                type="email"
+                                class="border-b-2 text-black text-xl outline-none"
+                                placeholder="Enter your email here..."
+                            />
+                        </div>
+
+                        <div class="flex flex-col gap-1">
+                            <label
+                                for="password"
+                                class="text-purple text-xl font-semibold"
+                                >Password</label
+                            >
+                            <input
+                                type="password"
+                                class="border-b-2 text-black text-xl outline-none"
+                                placeholder="Enter your password here..."
+                            />
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2 text-sm justify-center">
+                        <p>Don't have an account yet?</p>
+                        <a href="#" class="text-purple">Register Now</a>
+                    </div>
+
+                    <div class="flex justify-center">
+                        <button
+                            class="bg-gradient text-center text-xl text-white font-semibold py-1 px-16 rounded-lg"
+                        >
+                            Login
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </body>
 </html>
