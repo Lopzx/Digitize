@@ -14,13 +14,23 @@
     --white: #ffffff;
     --purple: #8f46d9;
     --blue: #5753ff;
+    --red: #fd6565;
+}
+.body-gradient {
+    background: linear-gradient(90deg, #8f46d9 0%, #5753ff 100%);
 }
 .card {
     background-color: var(--white);
     border-radius: 24px;
 }
 .bg-gradient {
-    background: linear-gradient(90deg, #8f46d9 0%, #5753ff 100%);
+    background: linear-gradient(to left, #8f46d9, #5753ff, #8f46d9);
+    background-size: 200%;
+    transition: 0.5s;
+}
+.bg-gradient:hover {
+    background-position: right;
+    transition: 1s ease;
 }
 .bg-gradient-alt {
     border-width: 4px;
@@ -39,8 +49,14 @@
 .text-blue {
     color: var(--blue);
 }
+.text-red {
+    color: var(--red);
+}
 .text-gradient {
     background: linear-gradient(90deg, #8f46d9 0%, #5753ff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+.error {
+    border-bottom: 2px solid var(--red);
 }
