@@ -571,16 +571,16 @@ video {
   left: 0px;
 }
 
-.right-0 {
-  right: 0px;
-}
-
 .top-4 {
   top: 1rem;
 }
 
 .right-4 {
   right: 1rem;
+}
+
+.right-0 {
+  right: 0px;
 }
 
 .z-\[100\] {
@@ -660,18 +660,12 @@ video {
   display: none;
 }
 
-.h-fit {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+.h-screen {
+  height: 100vh;
 }
 
 .h-5 {
   height: 1.25rem;
-}
-
-.h-screen {
-  height: 100vh;
 }
 
 .h-10 {
@@ -686,6 +680,12 @@ video {
   height: 100%;
 }
 
+.h-fit {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .h-8 {
   height: 2rem;
 }
@@ -698,16 +698,16 @@ video {
   min-height: 100vh;
 }
 
+.w-screen {
+  width: 100vw;
+}
+
 .w-\[20rem\] {
   width: 20rem;
 }
 
 .w-full {
   width: 100%;
-}
-
-.w-screen {
-  width: 100vw;
 }
 
 .w-32 {
@@ -786,6 +786,10 @@ video {
   justify-content: space-between;
 }
 
+.gap-4 {
+  gap: 1rem;
+}
+
 .gap-8 {
   gap: 2rem;
 }
@@ -802,16 +806,16 @@ video {
   gap: 0.5rem;
 }
 
-.gap-4 {
-  gap: 1rem;
-}
-
 .overflow-hidden {
   overflow: hidden;
 }
 
 .overflow-scroll {
   overflow: scroll;
+}
+
+.overflow-x-scroll {
+  overflow-x: scroll;
 }
 
 .whitespace-nowrap {
@@ -865,14 +869,14 @@ video {
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .bg-gray-100 {
@@ -949,11 +953,6 @@ video {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-
-.px-12 {
-  padding-left: 3rem;
-  padding-right: 3rem;
 }
 
 .pt-16 {
@@ -1272,12 +1271,12 @@ video {
     margin-top: -4rem;
   }
 
-  .tablet\:h-10 {
-    height: 2.5rem;
-  }
-
   .tablet\:h-8 {
     height: 2rem;
+  }
+
+  .tablet\:h-10 {
+    height: 2.5rem;
   }
 
   .tablet\:w-\[32rem\] {
@@ -1386,5 +1385,9 @@ video {
 
   .laptop\:gap-3 {
     gap: 0.75rem;
+  }
+
+  .laptop\:overflow-hidden {
+    overflow: hidden;
   }
 }
