@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\PeopleController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/create',[PeopleController::class,'getCreatePage'])->name('getCreatePage');
+
+Route::post('/create-people', [PeopleController::class, 'createPeople'])->name('createPeople');
