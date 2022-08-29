@@ -729,8 +729,8 @@ video {
   width: 100%;
 }
 
-.w-32 {
-  width: 8rem;
+.w-16 {
+  width: 4rem;
 }
 
 .w-28 {
@@ -759,8 +759,8 @@ video {
   width: 5rem;
 }
 
-.w-16 {
-  width: 4rem;
+.w-32 {
+  width: 8rem;
 }
 
 .w-5 {
@@ -913,8 +913,8 @@ video {
   stroke: #fff;
 }
 
-.p-8 {
-  padding: 2rem;
+.p-3 {
+  padding: 0.75rem;
 }
 
 .p-\[2px\] {
@@ -923,18 +923,6 @@ video {
 
 .p-6 {
   padding: 1.5rem;
-}
-
-.p-2 {
-  padding: 0.5rem;
-}
-
-.p-3 {
-  padding: 0.75rem;
-}
-
-.p-1 {
-  padding: 0.25rem;
 }
 
 .px-6 {
@@ -955,16 +943,6 @@ video {
 .px-16 {
   padding-left: 4rem;
   padding-right: 4rem;
-}
-
-.px-24 {
-  padding-left: 6rem;
-  padding-right: 6rem;
-}
-
-.py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
 }
 
 .py-2 {
@@ -1330,6 +1308,10 @@ video {
     width: 32rem;
   }
 
+  .tablet\:w-32 {
+    width: 8rem;
+  }
+
   .tablet\:w-40 {
     width: 10rem;
   }
@@ -1358,10 +1340,6 @@ video {
     width: 16rem;
   }
 
-  .tablet\:w-32 {
-    width: 8rem;
-  }
-
   .tablet\:w-7 {
     width: 1.75rem;
   }
@@ -1382,12 +1360,12 @@ video {
     overflow-x: hidden;
   }
 
-  .tablet\:p-1 {
-    padding: 0.25rem;
-  }
-
   .tablet\:p-8 {
     padding: 2rem;
+  }
+
+  .tablet\:p-1 {
+    padding: 0.25rem;
   }
 
   .tablet\:px-12 {

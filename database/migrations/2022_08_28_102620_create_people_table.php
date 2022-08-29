@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('people', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('email')->unique();
-            $table->date('date')->nullable();
-            $table->string('category')->nullable();
+            $table->string('addName')->nullable();
+            $table->string('addEmail')->unique();
+            $table->date('addDob')->nullable();
+            $table->string('addCategory')->nullable();
             $table->timestamps();
         });
     }

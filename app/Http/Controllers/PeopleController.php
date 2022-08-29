@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\People;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PeopleController extends Controller
 {
@@ -13,12 +14,54 @@ class PeopleController extends Controller
 
     public function createPeople(Request $request){
         People::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'date' => $request->date,
-            'category' => $request->category,
+            'addName' => $request->addName,
+            'addEmail' => $request->addEmail,
+            'addDob' => $request->addDob,
+            'addCategory' => $request->addCategory,
         ]);
         return redirect(route('getCreatePage'));
+    }
+
+    public function getPeople(){
+        $peoples = People::paginate(2);
+        // $people = People::all();
+        return view('viewParticipant', ['peoples'=> $peoples]);
+    }
+
+    public function searchPeople(Request $request){
+        $cari = $request->cari;
+        $peoples = People::where('addName', 'like', '%'.$cari.'%')
+            ->orWhere('addCategory', 'like', '%'.$cari.'%')
+            ->orWhere('addEmail', 'like', '%'.$cari.'%')
+            ->paginate(3);
+        $peoples->withPath('');
+        $peoples->appends($request->all());
+        return view('viewParticipant', compact('peoples', 'request'));
+    }
+
+
+    public function getPeopleById($id) {
+        $people = People::find($id);
+        return view('updateParticipant', ['people' => $people]);
+    }
+
+    public function updatePeople(Request $request, $id) {
+        $people = People::find($id);
+
+        $people -> update([
+            'addName' => $request->addName,
+            'addEmail' => $request->addEmail,
+            'addDob' => $request->addDob,
+            'addCategory' => $request->addCategory,
+        ]);
+
+        return redirect(route('getPeople'));
+    }
+
+
+    public function deletePeople($id){
+        People::destroy($id);
+        return redirect(route('getPeople'));
     }
 
     //

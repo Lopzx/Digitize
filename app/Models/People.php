@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class People extends Model
 {
     protected $fillable = [
-        'name', 'email', 'date', 'category',
+        'addName', 'addEmail', 'addDob', 'addCategory',
     ];
     use HasFactory;
 }
