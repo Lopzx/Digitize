@@ -106,10 +106,16 @@
 <section class="flex justify-center items-center content-center tablet:mx-16 mx-8 h-full">
     <div class="flex flex-col tablet:gap-8 gap-4 justify-center items-center bg-white laptop:h-[75vh] h-[85vh] laptop:w-fit w-full rounded-3xl tablet:px-12 px-6 py-8 tablet:my-16 my-8">
         <div>
+            <!-- Search -->
             <form action="{{route('search1')}}" method="GET" class="input-group row">
-
-                        <input type="text" name="cari" placeholder="Search" value=""/>
-                        <button type="submit" class="btn btn-primary">Search</button>
+                <div class="bg-slate-200 w-full tablet:py-2 py-1 tablet:px-8 px-4 rounded-full flex gap-4 items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="tablet:w-6 tablet:h-6 h-4 w-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                    </svg>
+                    <input type="text" name="cari" placeholder="Search..." class="bg-slate-200 text-black outline-none tablet:text-lg text-md">
+                </div>
+                    {{-- <input type="text" name="cari" placeholder="Search" value=""/>
+                    <button type="submit" class="btn btn-primary">Search</button> --}}
             </form>
             <h1 class="text-purple tablet:text-4xl text-2xl font-semibold">Participant</h1>
         </div>

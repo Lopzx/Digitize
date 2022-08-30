@@ -19,6 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/create',[PeopleController::class,'getCreatePage'])->name('getCreatePage');
 
 Route::post('/create-people',[PeopleController::class, 'createPeople'])->name('createPeople');
@@ -32,3 +33,10 @@ Route::delete('/delete-people/{id}', [PeopleController::class, 'deletePeople'])-
 Route::get('/update-people/{id}', [PeopleController::class, 'getPeopleById'])->name('getPeopleById');
 
 Route::patch('/update-people/{id}', [PeopleController::class, 'updatePeople'])->name('updatePeople');
+
+// vaness
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
