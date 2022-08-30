@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -66,6 +68,24 @@
                                 <p id="add-category-error">Contest category is required</p>
                             </div>
                         </div>
+
+                        <!-- Add File -->
+                        <div class="flex flex-col gap-1">
+                            <label for="add-file"  class="text-purple tablet:text-xl text-base font-semibold">Media</label>
+                            <label for="add-file">
+                                <input type="file" accept="image/*, audio/*, video/*" id="add-file" name="add-file" class="w-full tablet:text-lg text-sm text-black
+                                file:mr-5 file:py-2 tablet:file:px-6 file:px-2
+                                file:rounded-lg file:border-none
+                                file:tablet:text-base file:text-xs file:font-semibold
+                                file:bg-purple-600 file:text-white
+                                hover:file:cursor-pointer hover:file:opacity-60"/>
+
+                                <div class="hidden text-red tablet:text-sm text-xs mt-2 flex items-center gap-2">
+                                    <img src="../../public/asset/error.png" alt="error" class="h-5" />
+                                    <p id="add-file-error">File is required</p>
+                                </div>
+                            </label>
+                        </div>
                     </div>
 
                     <div class="flex justify-center">
@@ -132,6 +152,24 @@
                                 <img src="../../public/asset/error.png" alt="error" class="h-5" />
                                 <p id="edit-category-error">Contest category is required</p>
                             </div>
+                        </div>
+
+                        <!-- Edit File -->
+                        <div class="flex flex-col gap-1">
+                            <label for="edit-file"  class="text-purple tablet:text-xl text-base font-semibold">Media</label>
+                            <label for="edit-file">
+                                <input type="file" accept="image/*, audio/*, video/*" id="edit-file" name="add-file" class="w-full tablet:text-lg text-sm text-black
+                                file:mr-5 file:py-2 tablet:file:px-6 file:px-2
+                                file:rounded-lg file:border-none
+                                file:tablet:text-base file:text-xs file:font-semibold
+                                file:bg-purple-600 file:text-white
+                                hover:file:cursor-pointer hover:file:opacity-60"/>
+
+                                <div class="hidden text-red tablet:text-sm text-xs mt-2 flex items-center gap-2">
+                                    <img src="../../public/asset/error.png" alt="error" class="h-5" />
+                                    <p id="edit-file-error">File is required</p>
+                                </div>
+                            </label>
                         </div>
                     </div>
 

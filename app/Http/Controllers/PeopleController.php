@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\PeopleRequest;
 use App\Models\People;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -9,10 +10,10 @@ class PeopleController extends Controller
 {
 
     public function getCreatePage(){
-        return view('create');
+        return view('viewParticipant');
     }
 
-    public function createPeople(Request $request){
+    public function createPeople(PeopleRequest $request){
 
         $extension = $request->file('addImage')->getClientOriginalExtension();
         $fileName = $request->addName.'_'.$request->addCategory.'.'.$extension;//rename image
@@ -29,7 +30,7 @@ class PeopleController extends Controller
     }
 
     public function getPeople(){
-        $peoples = People::paginate(2);
+        $peoples = People::paginate(3);
         // $people = People::all();
         return view('viewParticipant', ['peoples'=> $peoples]);
     }
@@ -51,14 +52,20 @@ class PeopleController extends Controller
         return view('updateParticipant', ['people' => $people]);
     }
 
-    public function updatePeople(Request $request, $id) {
+    public function updatePeople(PeopleRequest $request, $id) {
         $people = People::find($id);
+
+        $extension = $request->file('addImage')->getClientOriginalExtension();
+        $fileName = $request->addName.'_'.$request->addCategory.'.'.$extension;//rename image
+        $request->file('addImage')->storeAs('public/addImage/', $fileName);//save image
+
 
         $people -> update([
             'addName' => $request->addName,
             'addEmail' => $request->addEmail,
             'addDob' => $request->addDob,
             'addCategory' => $request->addCategory,
+            'addImage'=> $fileName,
         ]);
 
         return redirect(route('getPeople'));

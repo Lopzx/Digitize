@@ -45,13 +45,16 @@ const addEmailInput = document.querySelector("#add-email");
 const addEmailError = document.querySelector("#add-email-error");
 const addCategoryInput = document.querySelector("#add-category");
 const addCategoryError = document.querySelector("#add-category-error")
+const addFileInput = document.querySelector("#add-file");
+const addFileError = document.querySelector("#add-file-error");
 
 addNameInput.isValid = () => !!addNameInput.value;
 addDobInput.isValid = () => !!addDobInput.value;
 addEmailInput.isValid = () => isValidEmail(addEmailInput.value);
 addCategoryInput.isValid = () => !!addCategoryInput.value;
+addFileInput.isValid = () => !!addFileInput.value;
 
-const addInputFields = [addNameInput, addDobInput, addEmailInput, addCategoryInput]
+const addInputFields = [addNameInput, addDobInput, addEmailInput, addCategoryInput, addFileInput]
 
 const isValidEmail = (email) => {
     const re =
@@ -84,7 +87,7 @@ addForm.addEventListener("submit", (e) => {
     addShouldValidate = true;
     addValidateInputs();
     if (addIsFormValid) {
-        //
+        addForm.submit()
     }
 })
 
@@ -101,13 +104,16 @@ const editEmailInput = document.querySelector("#edit-email");
 const editEmailError = document.querySelector("#edit-email-error");
 const editCategoryInput = document.querySelector("#edit-category");
 const editCategoryError = document.querySelector("#edit-category-error")
+const editFileInput = document.querySelector("#edit-file");
+const editFileError = document.querySelector("#edit-file-error");
 
 editNameInput.isValid = () => !!editNameInput.value;
 editDobInput.isValid = () => !!editDobInput.value;
 editEmailInput.isValid = () => isValidEmail(editEmailInput.value);
 editCategoryInput.isValid = () => !!editCategoryInput.value;
+editFileInput.isValid = () => !!editFileInput.value;
 
-const editInputFields = [editNameInput, editDobInput, editEmailInput, editCategoryInput]
+const editInputFields = [editNameInput, editDobInput, editEmailInput, editCategoryInput, editFileInput]
 
 let editShouldValidate = false;
 let editIsFormValid = false;

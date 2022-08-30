@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{{ asset('public/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/vote_style.css') }}" rel="stylesheet">
     <body style="background: linear-gradient(90deg, #8f46d9 0%, #5753ff 100%)">
     <title>Document</title>
 </head>
@@ -15,7 +17,7 @@
         <div class="laptop:flex hidden justify-between items-center">
             <div>
                 <a href="#">
-                    <img src="asset/logo.png" alt="Digitize" class="h-10"/>
+                    <img src="{{asset('asset/logo.png')}}" alt="Digitize" class="h-10"/>
                 </a>
             </div>
             <ul class="text-purple flex items-center gap-8 text-base">
@@ -68,4 +70,10 @@
     @yield('content')
 </body>
 </html>
+
+<script src="{{asset('js/navbar.js')}}"></script>
+<script src="{{asset('js/admin.js')}}"></script>
+
+
+
 
