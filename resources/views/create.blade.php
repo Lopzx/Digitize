@@ -82,6 +82,7 @@
                         <p id="add-category-error">Contest category is required</p>
                     </div> --}}
                 </div>
+                <input name="addImage" type="file" class="form-control" id="formGroupExampleInput" placeholder="Input Image Of Book">
             </div>
 
             <div class="flex justify-center">

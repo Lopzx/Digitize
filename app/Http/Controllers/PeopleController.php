@@ -13,10 +13,16 @@ class PeopleController extends Controller
     }
 
     public function createPeople(Request $request){
+
+        $extension = $request->file('addImage')->getClientOriginalExtension();
+        $fileName = $request->addName.'_'.$request->addCategory.'.'.$extension;//rename image
+        $request->file('addImage')->storeAs('public/addImage/', $fileName);//save image
+
         People::create([
             'addName' => $request->addName,
             'addEmail' => $request->addEmail,
             'addDob' => $request->addDob,
+            'addImage'=> $fileName,
             'addCategory' => $request->addCategory,
         ]);
         return redirect(route('getCreatePage'));

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('addEmail')->unique();
             $table->date('addDob')->nullable();
             $table->string('addCategory')->nullable();
+            $table->string('addImage');
             $table->timestamps();
         });
     }
