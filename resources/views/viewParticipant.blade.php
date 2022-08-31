@@ -220,7 +220,6 @@
                 <button id="add-btn" class="bg-gradient text-center tablet:text-xl text-base text-white font-semibold py-1 px-16 rounded-lg">Add Participant</button>
             </div>
         </div>
-
     </section>
 
     <!-- Footer -->

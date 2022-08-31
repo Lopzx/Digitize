@@ -26,7 +26,7 @@
                     <li><a href="vote-art">Art</a></li>
                     <li><a href="vote-song">Song</a></li>
                     <li><a href="vote-dance">Dance</a></li>
-                    @if (Auth::user()->role == 'admin')
+                    @if (!empty(Auth::user()) && Auth::user()->role == 'admin' )
                     <li><a href="{{ route('getPeople')}}">Participant</a></li>
                     @endif
                     <li class="text-white bg-purple py-1 px-4 rounded-lg ml-4">
@@ -112,7 +112,6 @@
                 <a href="#voteArt" class="text-gradient font-medium py-1.5 px-6 rounded-xl border-2 br-gradient tablet:py-3 tablet:px-8 tablet:border-4 tablet:rounded-xl tablet:br-gradient">Vote Now</a>
             </div>
         </div>
-
         <!-- Vote Section -->
         @if(isset($artParticipant))
             <section id="voteArt">
@@ -132,9 +131,11 @@
                                     <h1 class="text-black text-center text-xl pb-1 tablet:text-3xl tablet:pb-2 laptop:text-4xl laptop:pb-3">{{$participant->addName}}</h1>
                                     <h3 class="text-trans-black text-center text-base tablet:text-lg laptop:text-xl">Vote {{$participant->vote}}</h3>
                                 </div>
-                                <button onclick="votingPopup()" class="w-full text-white text-base font-semibold bg-gradient py-1.5 rounded-md tablet:text-lg tablet:py-2 tablet:rounded-lg laptop:text-xl laptop:py-3 laptop:rounded-xl" type="button">
-                                    Vote
-                                </button>
+                                <a  href="{{route('vote',['id' => $participant->id])}}">
+                                    <button {{(Auth::user()->voted) ? 'disabled' : ''}} onclick="votingPopup()" class="w-full text-white text-base font-semibold bg-gradient py-1.5 rounded-md tablet:text-lg tablet:py-2 tablet:rounded-lg laptop:text-xl laptop:py-3 laptop:rounded-xl" type="button">
+                                        Vote
+                                    </button>
+                                </a>
                             </div>
                         @endforeach
                     </div>
@@ -264,15 +265,17 @@
                     </div>
                     <div class="flex flex-wrap justify-center">
                         @foreach ($songParticipant as $participant)
-                            <div class="flex flex-col justify-center items-center border-2 rounded-xl p-6 space-y-3 shadow-lg br-gradient mx-6 mb-6 tablet:w-80 tablet:mx-12 tablet:mb-12 tablet:shadow-2xl">
+                            <div class="w-full flex flex-col justify-center items-center border-2 rounded-xl p-6 space-y-3 shadow-lg br-gradient mx-6 mb-6 tablet:w-80 tablet:mx-12 tablet:mb-12 tablet:shadow-2xl">
                                 <img src="" class="object-contain object-center rounded-md w-72 h-60" alt="">
                                 <div class="flex flex-col justify-center items-center">
                                     <h1 class="text-black text-center text-xl pb-1 tablet:text-3xl tablet:pb-2 laptop:text-4xl laptop:pb-3">{{$participant->addName}}</h1>
                                     <h3 class="text-trans-black text-center text-base tablet:text-lg laptop:text-xl">Vote {{$participant->vote}}</h3>
                                 </div>
-                                <button onclick="votingPopup()" class="w-full text-white text-base font-semibold bg-gradient py-1.5 rounded-md tablet:text-lg tablet:py-2 tablet:rounded-lg laptop:text-xl laptop:py-3 laptop:rounded-xl" type="button">
-                                    Vote
-                                </button>
+                                <a class="px" href="{{route('vote',['id' => $participant->id])}}">
+                                    <button {{Auth::user()->voted ? 'disabled' : ''}} onclick="votingPopup()" class="w-full text-white text-base font-semibold bg-gradient py-1.5 rounded-md tablet:text-lg tablet:py-2 tablet:rounded-lg laptop:text-xl laptop:py-3 laptop:rounded-xl" type="button">
+                                        Vote
+                                    </button>
+                                </a>
                             </div>
                         @endforeach
 
@@ -315,9 +318,11 @@
                                 <h1 class="text-black text-center text-xl pb-1 tablet:text-3xl tablet:pb-2 laptop:text-4xl laptop:pb-3">{{$participant->addName}}</h1>
                                 <h3 class="text-trans-black text-center text-base tablet:text-lg laptop:text-xl">Vote {{$participant->vote}}</h3>
                             </div>
-                            <button onclick="votingPopup()" class="w-full text-white text-base font-semibold bg-gradient py-1.5 rounded-md tablet:text-lg tablet:py-2 tablet:rounded-lg laptop:text-xl laptop:py-3 laptop:rounded-xl" type="button">
-                                Vote
-                            </button>
+                            <a href="{{route('vote',['id' => $participant->id])}}">
+                                <button {{Auth::user()->voted ? 'disabled' : ''}} onclick="votingPopup()" class="w-full text-white text-base font-semibold bg-gradient py-1.5 rounded-md tablet:text-lg tablet:py-2 tablet:rounded-lg laptop:text-xl laptop:py-3 laptop:rounded-xl" type="button">
+                                    Vote
+                                </button>
+                            </a>
                         </div>
                     @endforeach
                 </div>

@@ -21,6 +21,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::middleware('admin')->group(function(){
 
     Route::get('/create',[PeopleController::class,'getCreatePage'])->name('getCreatePage');
@@ -42,15 +44,16 @@ Route::middleware('admin')->group(function(){
 
 Route::middleware('auth')->group(function(){
 
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
     Route::get('/vote-song', [VoteController::class, 'getSongPage'])->name('getSong');
 
     Route::get('/vote-art', [VoteController::class, 'getArtPage'])->name('getArt');
 
     Route::get('/vote-dance', [VoteController::class, 'getDancePage'])->name('getDance');
 
+    Route::get('/vote/{id}', [VoteController::class, 'vote'])->name('vote');
+
     Route::get('/logout', [PeopleController::class, 'logout'])->name('logout');
+
 
 });
 

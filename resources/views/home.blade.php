@@ -71,7 +71,7 @@
                         <li><a href="vote-art">Art</a></li>
                         <li><a href="vote-song">Song</a></li>
                         <li><a href="vote-dance">Dance</a></li>
-                        @if (Auth::user()->role == 'admin')
+                        @if (!empty(Auth::user()) && Auth::user()->role == 'admin' )
                         <li><a href="{{ route('getPeople')}}">Participant</a></li>
                         @endif
                         <li class="text-white bg-purple py-1 px-4 rounded-lg ml-4">

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\People;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class VoteController extends Controller
 {
@@ -22,13 +24,12 @@ class VoteController extends Controller
         return view('vote', ['danceParticipant' => $danceParticipant]);
     }
 
-    // public function updateVote(Request $request, $id) {
-    //     $people = People::find($id);
+    public function vote(Request $request, $participantId) {
+        User::find(Auth::user()->id)->update(['voted' => true]);
+        $vote = People::find($participantId);
+        $currentVal = $vote->vote;
+        $vote->update(['vote' => $currentVal + 1]);
+        return redirect()->back();
+    }
 
-    //     $people -> update([
-    //         'vote' => $request->vote,
-    //     ]);
-
-    //     return view('vote');
-    // }
 }
