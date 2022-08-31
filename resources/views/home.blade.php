@@ -167,14 +167,14 @@
                             <div class="flex flex-col tablet:gap-4 gap-2 items-center justify-center bg-gradient-alt tablet:w-64 tablet:h-60 w-48 h-52">
                                 <img src="asset/home/art.png" alt="Art">
                                 <p class="text-purple tablet:text-2xl text-xl font-semibold">Art</p>
-                                <a href="{{route('getArt')}}" class="text-white bg-purple py-2 px-6 rounded-lg tablet:text-lg text-base">Learn More</a>
+                                <a href="{{route('getArt')}}" class="z-0 text-white bg-purple py-2 px-6 rounded-lg tablet:text-lg text-base">Learn More</a>
                             </div>
 
                             <!-- Song -->
                             <div class="flex flex-col tablet:gap-4 gap-2 items-center justify-center bg-gradient-alt tablet:w-64 tablet:h-60 w-48 h-52">
                                 <img src="asset/home/song.png" alt="Song">
                                 <p class="text-purple tablet:text-2xl text-xl font-semibold">Song</p>
-                                <a href="{{route('getSong')}}" class="text-white bg-purple py-2 px-6 rounded-lg tablet:text-lg text-base">Learn More</a>
+                                <a href="{{route('getSong')}}" class="z-0 text-white bg-purple py-2 px-6 rounded-lg tablet:text-lg text-base">Learn More</a>
                             </div>
                         </div>
 
@@ -182,7 +182,7 @@
                         <div class="flex flex-col tablet:gap-4 gap-2 items-center justify-center bg-gradient-alt tablet:w-64 tablet:h-60 w-48 h-52">
                             <img src="asset/home/dance.png" alt="Dance">
                             <p class="text-purple tablet:text-2xl text-xl font-semibold">Dance</p>
-                            <a href="{{route('getDance')}}" class="text-white bg-purple py-2 px-6 rounded-lg tablet:text-lg text-base">Learn More</a>
+                            <a href="{{route('getDance')}}" class="z-0 text-white bg-purple py-2 px-6 rounded-lg tablet:text-lg text-base">Learn More</a>
                         </div>
                     </div>
                 </div>
