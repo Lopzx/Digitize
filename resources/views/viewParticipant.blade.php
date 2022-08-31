@@ -85,27 +85,12 @@
 </section>
 
 
-<!-- Delete Popup -->
-<section id="delete-popup" class="hidden fixed w-screen h-screen z-[100] flex justify-center items-center font-poppins">
-    <div id="sidebar-blank" class="fixed flex-col bg-black z-1 opacity-20 blur-xl h-screen w-screen top-0 left-0"></div>
-    <div class="bg-white rounded-3xl tablet:px-12 px-6 py-8 tablet:w-[32rem] w-[20rem] flex flex-col justify-center items-center content-center tablet:gap-8 gap-4 relative">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" class="tablet:w-32 w-16 body-gradient stroke-white tablet:p-8 p-3 rounded-full">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
-        </svg>
-        <h1 class="tablet:text-2xl text-base font-poppins font-semibold text-center">Delete this participant data?</h1>
-        <div class="flex justify-center tablet:gap-8 gap-4">
-            <form action="" id="delete-confirm">
-                <button class="bg-gradient text-white font-semibold tablet:text-xl text-sm tablet:w-40 w-28 py-2 rounded-xl text-center">Delete</button>
-            </form>
-            <button class="bg-gradient-alt text-gradient font-semibold tablet:text-xl text-sm tablet:w-40 w-28 py-2" id="delete-cancel" onclick="closePopup()">Cancel</button>
-        </div>
-    </div>
-</section>
-
 <!-- Content Wrapper -->
 <section class="flex justify-center items-center content-center tablet:mx-16 mx-8 h-full">
     <div class="flex flex-col tablet:gap-8 gap-4 justify-center items-center bg-white laptop:h-[75vh] h-[85vh] laptop:w-fit w-full rounded-3xl tablet:px-12 px-6 py-8 tablet:my-16 my-8">
         <div>
+            <h1 class="text-purple tablet:text-4xl text-2xl font-semibold">Participant</h1>
+        </div>
             <!-- Search -->
             <form action="{{route('search1')}}" method="GET" class="input-group row">
                 <div class="bg-slate-200 w-full tablet:py-2 py-1 tablet:px-8 px-4 rounded-full flex gap-4 items-center">
@@ -114,11 +99,8 @@
                     </svg>
                     <input type="text" name="cari" placeholder="Search..." class="bg-slate-200 text-black outline-none tablet:text-lg text-md">
                 </div>
-                    {{-- <input type="text" name="cari" placeholder="Search" value=""/>
-                    <button type="submit" class="btn btn-primary">Search</button> --}}
             </form>
-            <h1 class="text-purple tablet:text-4xl text-2xl font-semibold">Participant</h1>
-        </div>
+
         <table class="flex flex-col border-collapse font-poppins laptop:w-full tablet:w-[44rem] w-full h-full mx-6 tablet:overflow-x-hidden overflow-x-scroll overflow-y-scroll">
             <thead class="w-fit whitespace-nowrap">
                 <tr class="text-purple tablet:text-sm text-xs font-semibold flex items-center gap-4 py-2 tablet:px-8 px-0">
@@ -163,6 +145,10 @@
                 @endif
             </tbody>
         </table>
+<<<<<<< HEAD
+=======
+        {{-- {{ $peoples->links() }} //paginate --}}
+>>>>>>> 7a25be1307809d94304e33990d5cd10b1e140d52
 
         <div class="flex justify-center">
             <button id="add-btn" class="bg-gradient text-center tablet:text-xl text-base text-white font-semibold py-1 px-16 rounded-lg">Add Participant</button>

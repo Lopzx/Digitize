@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Http\Requests\PeopleRequest;
 use App\Models\People;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -31,7 +32,6 @@ class PeopleController extends Controller
     }
 
     public function getPeople(){
-        // $peoples = People::paginate(3);
         $peoples = People::all();
         return view('viewParticipant', ['peoples'=> $peoples]);
     }
@@ -40,8 +40,7 @@ class PeopleController extends Controller
         $cari = $request->cari;
         $peoples = People::where('addName', 'like', '%'.$cari.'%')
             ->orWhere('addCategory', 'like', '%'.$cari.'%')
-            ->orWhere('addEmail', 'like', '%'.$cari.'%')
-            ->paginate(3);
+            ->orWhere('addEmail', 'like', '%'.$cari.'%');
         $peoples->withPath('');
         $peoples->appends($request->all());
         return view('viewParticipant', compact('peoples', 'request'));

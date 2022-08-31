@@ -51,7 +51,7 @@
                 <div class="flex flex-col gap-1">
                     <label for="addCategory"  class="text-purple tablet:text-xl text-base font-semibold">Contest Category</label>
                     <select id="edit-category" name="addCategory" value="{{$people->addCategory}}" type="text" class="border-b-2 text-black tablet:text-xl text-base outline-none"/>
-                        <option value="{{$people->addCategory}}" disabled selected>{{$people->addCategory}}</option>
+                        <option value="" disabled selected>Choose...</option>
                         <option value="art">Art</option>
                         <option value="dance">Dance</option>
                         <option value="song">Song</option>

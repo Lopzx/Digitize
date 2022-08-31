@@ -44,4 +44,3 @@ function closePopup(){
         logout_popup.classList.add("hidden");
     }
 }
-

@@ -25,6 +25,7 @@
                 <li><a href="#">Art</a></li>
                 <li><a href="#">Song</a></li>
                 <li><a href="#">Dance</a></li>
+                <li><a href="{{ route('getPeople')}}">Participant</a></li>
                 <li class="text-white bg-purple py-1 px-4 rounded-lg ml-4">
                     <a href="#"> Sign In</a>
                 </li>
@@ -54,6 +55,7 @@
                                 <li><a href="#">Art</a></li>
                                 <li><a href="#">Song</a></li>
                                 <li><a href="#">Dance</a></li>
+                                <li><a href="#">Participant</a></li>
                             </div>
                             <div class="mb-10">
                                 <li class="text-white text-center tablet:text-xl text-sm bg-purple font-semibold py-1 px-4 rounded-lg ml-4">
