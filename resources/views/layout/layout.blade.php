@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,11 +21,13 @@
                 </a>
             </div>
             <ul class="text-purple flex items-center gap-8 text-base">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Art</a></li>
-                <li><a href="#">Song</a></li>
-                <li><a href="#">Dance</a></li>
+                <li><a href="home">Home</a></li>
+                <li><a href="vote-art">Art</a></li>
+                <li><a href="vote-song">Song</a></li>
+                <li><a href="vote-dance">Dance</a></li>
+                @if (Auth::user()->role == 'admin')
                 <li><a href="{{ route('getPeople')}}">Participant</a></li>
+                @endif
                 <li class="text-white bg-purple py-1 px-4 rounded-lg ml-4">
                     <a href="#"> Sign In</a>
                 </li>
@@ -78,4 +80,4 @@
 
 
 
-
+ --}}

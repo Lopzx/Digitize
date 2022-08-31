@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\VoteController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -20,28 +21,37 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::middleware('admin')->group(function(){
 
-Route::get('/create',[PeopleController::class,'getCreatePage'])->name('getCreatePage');
+    Route::get('/create',[PeopleController::class,'getCreatePage'])->name('getCreatePage');
 
-Route::post('/create-people',[PeopleController::class, 'createPeople'])->name('createPeople');
+    Route::post('/create-people',[PeopleController::class, 'createPeople'])->name('createPeople');
 
-Route::get('/get-people',[PeopleController::class, 'getPeople'])->name('getPeople');
+    Route::get('/get-people',[PeopleController::class, 'getPeople'])->name('getPeople');
 
-Route::get('/s', [PeopleController::class, 'searchPeople'])->name('search1');
+    Route::get('/s', [PeopleController::class, 'searchPeople'])->name('search1');
 
-Route::delete('/delete-people/{id}', [PeopleController::class, 'deletePeople'])->name('delete');
+    Route::delete('/delete-people/{id}', [PeopleController::class, 'deletePeople'])->name('delete');
 
-Route::get('/update-people/{id}', [PeopleController::class, 'getPeopleById'])->name('getPeopleById');
+    Route::get('/update-people/{id}', [PeopleController::class, 'getPeopleById'])->name('getPeopleById');
 
-Route::patch('/update-people/{id}', [PeopleController::class, 'updatePeople'])->name('updatePeople');
+    Route::patch('/update-people/{id}', [PeopleController::class, 'updatePeople'])->name('updatePeople');
 
-Route::get('/vote-song', [VoteController::class, 'getSongPage'])->name('getSong');
+});
 
-Route::get('/vote-art', [VoteController::class, 'getArtPage'])->name('getArt');
 
-Route::get('/vote-dance', [VoteController::class, 'getDancePage'])->name('getDance');
+Route::middleware('auth')->group(function(){
 
-// vaness
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+    Route::get('/vote-song', [VoteController::class, 'getSongPage'])->name('getSong');
+
+    Route::get('/vote-art', [VoteController::class, 'getArtPage'])->name('getArt');
+
+    Route::get('/vote-dance', [VoteController::class, 'getDancePage'])->name('getDance');
+
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

@@ -22,10 +22,13 @@
                     </a>
                 </div>
                 <ul class="text-purple flex items-center gap-8 text-base">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Art</a></li>
-                    <li><a href="#">Song</a></li>
-                    <li><a href="#">Dance</a></li>
+                    <li><a href="home">Home</a></li>
+                    <li><a href="vote-art">Art</a></li>
+                    <li><a href="vote-song">Song</a></li>
+                    <li><a href="vote-dance">Dance</a></li>
+                    @if (Auth::user()->role == 'admin')
+                    <li><a href="{{ route('getPeople')}}">Participant</a></li>
+                    @endif
                     <li class="text-white bg-purple py-1 px-4 rounded-lg ml-4">
                         <a href="#"> Sign In</a>
                     </li>
@@ -320,6 +323,18 @@
                 </div>
         </section>
         @endif
+
+        <!-- Footer -->
+        <div class="flex flex-col items-center justify-center gap-4 bg-[#1E1E1E] w-full text-white text-center tablet:py-10 py-6 px-12">
+            <img src="asset/logo-white.png" alt="Digitize" class="tablet:h-12 h-8">
+            <div class="tablet:text-lg text-sm flex gap-4">
+                <a href="home">Home</a>
+                <a href="vote-art">Art</a>
+                <a href="vote-song">Song</a>
+                <a href="vote-dance">Dance</a>
+            </div>
+            <p class="tablet:text-sm text-xs opacity-50">Copyright © 2022 Digitize.com. All Rights Reserved</p>
+        </div>
 
 
         <script src="{{asset('js/navbar.js')}}"></script>
