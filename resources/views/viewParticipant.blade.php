@@ -145,10 +145,6 @@
                 @endif
             </tbody>
         </table>
-<<<<<<< HEAD
-=======
-        {{-- {{ $peoples->links() }} //paginate --}}
->>>>>>> 7a25be1307809d94304e33990d5cd10b1e140d52
 
         <div class="flex justify-center">
             <button id="add-btn" class="bg-gradient text-center tablet:text-xl text-base text-white font-semibold py-1 px-16 rounded-lg">Add Participant</button>

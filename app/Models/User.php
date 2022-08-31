@@ -22,6 +22,7 @@ class User extends Authenticatable
         'dob',
         'email',
         'password',
+        'voted',
         'role',
     ];
 

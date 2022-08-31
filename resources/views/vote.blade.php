@@ -109,7 +109,6 @@
                 <a href="#voteArt" class="text-gradient font-medium py-1.5 px-6 rounded-xl border-2 br-gradient tablet:py-3 tablet:px-8 tablet:border-4 tablet:rounded-xl tablet:br-gradient">Vote Now</a>
             </div>
         </div>
-
         <!-- Vote Section -->
         @if(isset($artParticipant))
             <section id="voteArt">
@@ -129,9 +128,11 @@
                                     <h1 class="text-black text-center text-xl pb-1 tablet:text-3xl tablet:pb-2 laptop:text-4xl laptop:pb-3">{{$participant->addName}}</h1>
                                     <h3 class="text-trans-black text-center text-base tablet:text-lg laptop:text-xl">Vote {{$participant->vote}}</h3>
                                 </div>
-                                <button onclick="votingPopup()" class="w-full text-white text-base font-semibold bg-gradient py-1.5 rounded-md tablet:text-lg tablet:py-2 tablet:rounded-lg laptop:text-xl laptop:py-3 laptop:rounded-xl" type="button">
-                                    Vote
-                                </button>
+                                <a  href="{{route('vote',['id' => $participant->id])}}">
+                                    <button {{(Auth::user()->voted) ? 'disabled' : ''}} onclick="votingPopup()" class="w-full text-white text-base font-semibold bg-gradient py-1.5 rounded-md tablet:text-lg tablet:py-2 tablet:rounded-lg laptop:text-xl laptop:py-3 laptop:rounded-xl" type="button">
+                                        Vote
+                                    </button>
+                                </a>
                             </div>
                         @endforeach
                     </div>
@@ -267,9 +268,11 @@
                                     <h1 class="text-black text-center text-xl pb-1 tablet:text-3xl tablet:pb-2 laptop:text-4xl laptop:pb-3">{{$participant->addName}}</h1>
                                     <h3 class="text-trans-black text-center text-base tablet:text-lg laptop:text-xl">Vote {{$participant->vote}}</h3>
                                 </div>
-                                <button onclick="votingPopup()" class="w-full text-white text-base font-semibold bg-gradient py-1.5 rounded-md tablet:text-lg tablet:py-2 tablet:rounded-lg laptop:text-xl laptop:py-3 laptop:rounded-xl" type="button">
-                                    Vote
-                                </button>
+                                <a href="{{route('vote',['id' => $participant->id])}}">
+                                    <button {{Auth::user()->voted ? 'disabled' : ''}} onclick="votingPopup()" class="w-full text-white text-base font-semibold bg-gradient py-1.5 rounded-md tablet:text-lg tablet:py-2 tablet:rounded-lg laptop:text-xl laptop:py-3 laptop:rounded-xl" type="button">
+                                        Vote
+                                    </button>
+                                </a>
                             </div>
                         @endforeach
 
@@ -312,9 +315,11 @@
                                 <h1 class="text-black text-center text-xl pb-1 tablet:text-3xl tablet:pb-2 laptop:text-4xl laptop:pb-3">{{$participant->addName}}</h1>
                                 <h3 class="text-trans-black text-center text-base tablet:text-lg laptop:text-xl">Vote {{$participant->vote}}</h3>
                             </div>
-                            <button onclick="votingPopup()" class="w-full text-white text-base font-semibold bg-gradient py-1.5 rounded-md tablet:text-lg tablet:py-2 tablet:rounded-lg laptop:text-xl laptop:py-3 laptop:rounded-xl" type="button">
-                                Vote
-                            </button>
+                            <a href="{{route('vote',['id' => $participant->id])}}">
+                                <button {{Auth::user()->voted ? 'disabled' : ''}} onclick="votingPopup()" class="w-full text-white text-base font-semibold bg-gradient py-1.5 rounded-md tablet:text-lg tablet:py-2 tablet:rounded-lg laptop:text-xl laptop:py-3 laptop:rounded-xl" type="button">
+                                    Vote
+                                </button>
+                            </a>
                         </div>
                     @endforeach
                 </div>
