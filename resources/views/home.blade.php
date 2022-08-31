@@ -62,7 +62,7 @@
                 <!-- Belum Sign In -->
                 <div class="laptop:flex hidden justify-between items-center">
                     <div>
-                        <a href="home.html">
+                        <a href="home">
                             <img src="asset/logo.png" alt="Digitize" class="h-10"/>
                         </a>
                     </div>
@@ -75,7 +75,7 @@
                         <li><a href="{{ route('getPeople')}}">Participant</a></li>
                         @endif
                         <li class="text-white bg-purple py-1 px-4 rounded-lg ml-4">
-                            <a href="login.html"> Sign In</a>
+                            <a href="login"> Sign In</a>
                         </li>
                     </ul>
                 </div>
@@ -84,7 +84,7 @@
             <!-- Sidebar (Tablet/Mobile) -->
             <div class="laptop:hidden flex justify-between items-center">
                 <div>
-                    <a href="home.html">
+                    <a href="home">
                         <img src="asset/logo.png" alt="Digitize" class="tablet:h-10 h-6"/>
                     </a>
                 </div>
@@ -122,7 +122,7 @@
                                 <!-- Belum Sign In -->
                                 <div class=" mb-10 font-semibold w-full">
                                     <li class="text-white text-center w-full tablet:text-xl text-sm bg-purple font-semibold py-1 px-4 rounded-lg ml-4">
-                                        <a href="login.html">Sign In</a>
+                                        <a href="login">Sign In</a>
                                     </li>
                                 </div>
                                 @endif
@@ -167,14 +167,14 @@
                             <div class="flex flex-col tablet:gap-4 gap-2 items-center justify-center bg-gradient-alt tablet:w-64 tablet:h-60 w-48 h-52">
                                 <img src="asset/home/art.png" alt="Art">
                                 <p class="text-purple tablet:text-2xl text-xl font-semibold">Art</p>
-                                <a href="#" class="text-white bg-purple py-2 px-6 rounded-lg tablet:text-lg text-base">Learn More</a>
+                                <a href="{{route('getArt')}}" class="text-white bg-purple py-2 px-6 rounded-lg tablet:text-lg text-base">Learn More</a>
                             </div>
 
                             <!-- Song -->
                             <div class="flex flex-col tablet:gap-4 gap-2 items-center justify-center bg-gradient-alt tablet:w-64 tablet:h-60 w-48 h-52">
                                 <img src="asset/home/song.png" alt="Song">
                                 <p class="text-purple tablet:text-2xl text-xl font-semibold">Song</p>
-                                <a href="#" class="text-white bg-purple py-2 px-6 rounded-lg tablet:text-lg text-base">Learn More</a>
+                                <a href="{{route('getSong')}}" class="text-white bg-purple py-2 px-6 rounded-lg tablet:text-lg text-base">Learn More</a>
                             </div>
                         </div>
 
@@ -182,7 +182,7 @@
                         <div class="flex flex-col tablet:gap-4 gap-2 items-center justify-center bg-gradient-alt tablet:w-64 tablet:h-60 w-48 h-52">
                             <img src="asset/home/dance.png" alt="Dance">
                             <p class="text-purple tablet:text-2xl text-xl font-semibold">Dance</p>
-                            <a href="#" class="text-white bg-purple py-2 px-6 rounded-lg tablet:text-lg text-base">Learn More</a>
+                            <a href="{{route('getDance')}}" class="text-white bg-purple py-2 px-6 rounded-lg tablet:text-lg text-base">Learn More</a>
                         </div>
                     </div>
                 </div>

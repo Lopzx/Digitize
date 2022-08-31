@@ -12,32 +12,68 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="shadow-sm tablet:px-24 tablet:py-2 px-8 py-2 bg-white">
         <!-- Desktop Navbar -->
-        <div class="laptop:flex hidden justify-between items-center">
-            <div>
-                <a href="#">
-                    <img src="{{asset('asset/logo.png')}}" alt="Digitize" class="h-10"/>
-                </a>
+            @if (Auth::check())
+            <!-- Udah Sign In -->
+            <div class="laptop:flex hidden justify-between items-center">
+                <div>
+                    <a href="home.html">
+                        <img src="asset/logo.png" alt="Digitize" class="h-10"/>
+                    </a>
+                </div>
+                <ul class="text-purple font-semibold flex items-center gap-8 text-base">
+                    <li><a href="home">Home</a></li>
+                    <li><a href="vote-art">Art</a></li>
+                    <li><a href="vote-song">Song</a></li>
+                    <li><a href="vote-dance">Dance</a></li>
+                    @if (Auth::user()->role == 'admin')
+                    <li><a href="{{ route('getPeople')}}">Participant</a></li>
+                    @endif
+                    <div id="navbar-profile-wrapper" class="text-white bg-purple py-1 px-4 rounded-lg ml-4">
+                        <button onclick="navbarProfile()">{{ Auth::user()->name }}</button>
+                        <div id="navbar-menu" class="hidden flex flex-col gap-4 bg-white text-purple shadow-[0px 2px 8px rgba(0, 0, 0, 0.25)] absolute z-0 rounded-lg right-24 mt-2 px-8 py-4">
+                            <div class="flex flex-col">
+                                <h4 class="text-lg">{{ Auth::user()->name }}</h4>
+                                <p class="font-medium opacity-70 -mt-1">{{ Auth::user()->email }}</p>
+                            </div>
+
+                            <div id="logout-btn" class="flex gap-3 items-center cursor-pointer">
+                                <img src="asset/logout.png" alt="">
+                                <p>Logout</p>
+                            </div>
+                        </div>
+                    </div>
+                </ul>
             </div>
-            <ul class="text-purple flex items-center gap-8 text-base">
-                <li><a href="home">Home</a></li>
-                <li><a href="vote-art">Art</a></li>
-                <li><a href="vote-song">Song</a></li>
-                <li><a href="vote-dance">Dance</a></li>
-                @if (Auth::user()->role == 'admin')
-                <li><a href="{{ route('getPeople')}}">Participant</a></li>
-                @endif
-                <li class="text-white bg-purple py-1 px-4 rounded-lg ml-4">
-                    <a href="#"> Sign In</a>
-                </li>
-            </ul>
-        </div>
+            @else
+            <!-- Belum Sign In -->
+            <div class="laptop:flex hidden justify-between items-center">
+                <div>
+                    <a href="home">
+                        <img src="asset/logo.png" alt="Digitize" class="h-10"/>
+                    </a>
+                </div>
+                <ul class="text-purple font-semibold flex items-center gap-8 text-base">
+                    <li><a href="home">Home</a></li>
+                    <li><a href="vote-art">Art</a></li>
+                    <li><a href="vote-song">Song</a></li>
+                    <li><a href="vote-dance">Dance</a></li>
+                    @if (!empty(Auth::user()) && Auth::user()->role == 'admin' )
+                    <li><a href="{{ route('getPeople')}}">Participant</a></li>
+                    @endif
+                    <li class="text-white bg-purple py-1 px-4 rounded-lg ml-4">
+                        <a href="login"> Sign In</a>
+                    </li>
+                </ul>
+            </div>
+            @endif
 
         <!-- Sidebar (Tablet/Mobile) -->
         <div class="laptop:hidden flex justify-between items-center">
             <div>
-                <a href="#">
+                <a href="home">
                     <img src="asset/logo.png" alt="Digitize" class="tablet:h-10 h-6"/>
                 </a>
             </div>
@@ -47,23 +83,38 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
                     </svg>
                 </button>
-                <div id="sidebar-menu" class="fixed flex-col hidden">
+
+                <div id="sidebar-menu" class="fixed flex-col hidden bg-white z-10">
                     <div id="sidebar-blank" class="fixed flex-col bg-black z-1 opacity-20 blur-xl h-screen w-screen top-0 left-0"></div>
                     <div class="fixed flex-col bg-white z-0 h-screen top-0 right-0 tablet:w-2/6 w-2/5 tablet:px-12 tablet:py-16 px-4 py-6">
-                        <img src="asset/close.png" alt="close" id="close-sidebar" class="tablet:h-8 h-5 absolute tablet:top-8 tablet:right-8 top-4 right-4" />
+                        <img src="asset/close.png" alt="close" id="close-sidebar" class="tablet:h-8 h-5 absolute tablet:top-8 tablet:right-8 top-4 right-4 cursor-pointer" />
                         <ul class="w-full h-full flex flex-col justify-between pt-16">
-                            <div class="w-full flex flex-col gap-8 tablet:text-xl text-sm text-right">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Art</a></li>
-                                <li><a href="#">Song</a></li>
-                                <li><a href="#">Dance</a></li>
-                                <li><a href="#">Participant</a></li>
+                            <div class="w-full flex flex-col gap-8 tablet:text-xl text-sm text-right font-semibold">
+                                <li><a href="home">Home</a></li>
+                                <li><a href="vote-art">Art</a></li>
+                                <li><a href="vote-song">Song</a></li>
+                                <li><a href="vote-dance">Dance</a></li>
                             </div>
-                            <div class="mb-10">
-                                <li class="text-white text-center tablet:text-xl text-sm bg-purple font-semibold py-1 px-4 rounded-lg ml-4">
-                                    <a href="#">Sign In</a>
+                            @if (Auth::check())
+                            <!-- Sudah Sign In -->
+                            <div class=" mb-10 font-semibold w-full flex flex-col tablet:gap-6 gap-4">
+                                <div class="flex flex-col">
+                                    <h4 class="tablet:text-xl text-sm text-right">{{ Auth::user()->name }}</h4>
+                                    <p class="tablet:text-base text-[10px] text-right font-medium opacity-70 -mt-1">{{ Auth::user()->email }}</p>
+                                </div>
+
+                                <li id="logout-sidebar-btn" class="text-white text-center w-full tablet:text-xl text-sm bg-purple font-semibold py-1 px-4 rounded-lg ml-4">
+                                    <a href="">Logout</a>
                                 </li>
                             </div>
+                            @else
+                            <!-- Belum Sign In -->
+                            <div class=" mb-10 font-semibold w-full">
+                                <li class="text-white text-center w-full tablet:text-xl text-sm bg-purple font-semibold py-1 px-4 rounded-lg ml-4">
+                                    <a href="login">Sign In</a>
+                                </li>
+                            </div>
+                            @endif
                         </ul>
                     </div>
                 </div>
