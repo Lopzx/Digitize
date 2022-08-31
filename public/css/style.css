@@ -1890,6 +1890,10 @@ video {
     width: 400px;
   }
 
+  .laptop\:w-\[1000px\] {
+    width: 1000px;
+  }
+
   .laptop\:flex-row {
     flex-direction: row;
   }
@@ -1931,6 +1935,11 @@ video {
   .laptop\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+
+  .laptop\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .laptop\:text-left {
