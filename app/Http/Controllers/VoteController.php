@@ -21,4 +21,14 @@ class VoteController extends Controller
         $danceParticipant = People::where('addCategory', 'dance')->get();
         return view('vote', ['danceParticipant' => $danceParticipant]);
     }
+
+    // public function updateVote(Request $request, $id) {
+    //     $people = People::find($id);
+
+    //     $people -> update([
+    //         'vote' => $request->vote,
+    //     ]);
+
+    //     return view('vote');
+    // }
 }

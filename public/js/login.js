@@ -51,6 +51,6 @@ function validateInputs (e) {
         passwordValue != "" &&
         passwordValue.match(rePassword)
     ) {
-        loginForm.submit();
+        // loginForm.submit();
     }
 };
