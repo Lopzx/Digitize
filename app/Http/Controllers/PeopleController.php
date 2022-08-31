@@ -40,7 +40,8 @@ class PeopleController extends Controller
         $cari = $request->cari;
         $peoples = People::where('addName', 'like', '%'.$cari.'%')
             ->orWhere('addCategory', 'like', '%'.$cari.'%')
-            ->orWhere('addEmail', 'like', '%'.$cari.'%');
+            ->orWhere('addEmail', 'like', '%'.$cari.'%')
+            ->paginate();
         $peoples->withPath('');
         $peoples->appends($request->all());
         return view('viewParticipant', compact('peoples', 'request'));

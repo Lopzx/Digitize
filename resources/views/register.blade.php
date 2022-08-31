@@ -131,7 +131,7 @@
 
                     <div class="flex tablet:flex-row flex-col text-center gap-2 tablet:text-sm text-xs justify-center">
                         <p>Have an account already?</p>
-                        <a href="login.html" class="text-purple">Login Now</a>
+                        <a href="login" class="text-purple">Login Now</a>
                     </div>
 
                     <div class="flex justify-center">

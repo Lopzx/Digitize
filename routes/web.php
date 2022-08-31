@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\VoteController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -20,7 +21,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::middleware(['auth'])->group(function() {
     Route::get('/create',[PeopleController::class,'getCreatePage'])->name('getCreatePage');
 
@@ -36,6 +36,7 @@ Route::middleware(['auth'])->group(function() {
 
     Route::patch('/update-people/{id}', [PeopleController::class, 'updatePeople'])->name('updatePeople');
 
+
     Route::get('/vote-song', [VoteController::class, 'getSongPage'])->name('getSong');
 
     Route::get('/vote-art', [VoteController::class, 'getArtPage'])->name('getArt');
@@ -43,9 +44,10 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/vote-dance', [VoteController::class, 'getDancePage'])->name('getDance');
 
     Route::get('/vote/{id}', [VoteController::class, 'vote'])->name('vote');
+
 });
 
-// vaness
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

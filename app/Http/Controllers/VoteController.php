@@ -24,6 +24,7 @@ class VoteController extends Controller
         return view('vote', ['danceParticipant' => $danceParticipant]);
     }
 
+<<<<<<< HEAD
     public function vote(Request $request, $participantId) {
         User::find(Auth::user()->id)->update(['voted' => true]);
         $vote = People::find($participantId);
@@ -31,4 +32,15 @@ class VoteController extends Controller
         $vote->update(['vote' => $currentVal + 1]);
         return redirect()->back();
     }
+=======
+    // public function updateVote(Request $request, $id) {
+    //     $people = People::find($id);
+
+    //     $people -> update([
+    //         'vote' => $request->vote,
+    //     ]);
+
+    //     return view('vote');
+    // }
+>>>>>>> 4f575d07420d646f33ba6fb394c521611e8ec9cc
 }
