@@ -70,7 +70,7 @@
                 <div>
                     <h1 class="text-purple tablet:text-4xl text-2xl font-semibold">Register</h1>
                 </div>
-                <form method="POST" id="" action="{{route('register')}}" class="flex flex-col gap-8 w-full">
+                <form method="POST" id="register-form" action="{{route('register')}}" class="flex flex-col gap-8 w-full">
                     @csrf
                     <div class="flex flex-col gap-6">
                         <!-- Full Name -->
@@ -131,7 +131,7 @@
 
                     <div class="flex tablet:flex-row flex-col text-center gap-2 tablet:text-sm text-xs justify-center">
                         <p>Have an account already?</p>
-                        <a href="login" class="text-purple">Login Now</a>
+                        <a href="login.html" class="text-purple">Login Now</a>
                     </div>
 
                     <div class="flex justify-center">

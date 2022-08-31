@@ -140,7 +140,7 @@ editForm.addEventListener("submit", (e) => {
     editShouldValidate = true;
     editValidateInputs();
     if (editIsFormValid) {
-        //
+        addForm.submit()
     }
 })
 
