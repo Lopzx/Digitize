@@ -6,6 +6,7 @@ use App\Models\People;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class PeopleController extends Controller
 {
@@ -78,5 +79,9 @@ class PeopleController extends Controller
         return redirect(route('getPeople'));
     }
 
+    public function logout(){
+        Auth::logout();
+        return redirect("/login");
+    }
     //
 }

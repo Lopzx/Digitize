@@ -17,9 +17,7 @@
                 </svg>
                 <h1 class="tablet:text-2xl text-base font-poppins font-semibold text-center">Are you sure you want to logout?</h1>
                 <div class="flex justify-center tablet:gap-8 gap-4">
-                    <form action="" id="delete-confirm">
-                        <button href="" class="bg-gradient text-white font-semibold tablet:text-xl text-sm tablet:w-40 w-28 py-2 rounded-xl text-center">Logout</button>
-                    </form>
+                    <a href="{{url('/logout')}}" class="bg-gradient text-white font-semibold tablet:text-xl text-sm tablet:w-40 w-28 py-2 rounded-xl text-center">logout</a>
                     <button class="bg-gradient-alt text-gradient font-semibold tablet:text-xl text-sm tablet:w-40 w-28 py-2" id="logout-cancel">Cancel</button>
                 </div>
             </div>

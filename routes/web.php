@@ -50,6 +50,8 @@ Route::middleware('auth')->group(function(){
 
     Route::get('/vote-dance', [VoteController::class, 'getDancePage'])->name('getDance');
 
+    Route::get('/logout', [PeopleController::class, 'logout'])->name('logout');
+
 });
 
 Route::get('/dashboard', function () {
