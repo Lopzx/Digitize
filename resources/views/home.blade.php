@@ -152,8 +152,8 @@
                     <div class="flex tablet:flex-row flex-col items-center laptop:gap-48 tablet:gap-20 gap-10 laptop:mx-24 tablet:mx-12 mx-0">
                         <img src="asset/home/logo-about.png" alt="Digitize" class="laptop:w-[400px] w-[200px]">
                         <div class="flex flex-col tablet:gap-8 gap-6">
-                            <p class="text-black tablet:text-xl text-base tablet:text-left text-center opacity-50">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt dolorem suscipit ab eligendi voluptatum, repudiandae mollitia voluptatem dolores distinctio quae.</p>
-                            <p class="text-black tablet:text-xl text-base tablet:text-left text-center opacity-50">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt dolorem suscipit ab eligendi voluptatum, repudiandae mollitia voluptatem dolores distinctio quae.</p>
+                            <p class="text-black tablet:text-xl text-base tablet:text-left text-center opacity-50">Digitize is a competition event held at University A. Digitize always organizes competitions every year. Digitize held a competition with three categories, which are drawing competition, singing competition, and dancing competition.</p>
+                            <p class="text-black tablet:text-xl text-base tablet:text-left text-center opacity-50">Digitize uses the online voting system on the Digitize website to find the winner. Each person can choose maximum 1 participant in each category. The participant with the most votes in each category will be the winner.</p>
                         </div>
                     </div>
                 </div>
@@ -191,7 +191,7 @@
             <!-- Interested Yet? -->
             <form id="email-form" class="body-gradient w-full flex flex-col items-center justify-center laptop:px-24 tablet:px-14 px-12 tablet:py-14 py-8 gap-8" onsubmit="validateEmail(event)">
                 <h2 class="text-center tablet:text-5xl text-3xl font-semibold text-white">Interested Yet?</h2>
-                <p class="text-white tablet:text-xl text-base text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt dolorem suscipit ab eligendi voluptatum, repudiandae mollitia voluptatem dolores distinctio quae.</p>
+                <p class="text-white tablet:text-xl text-base text-center">Get more information and the latest competitions from Digitize, subscribe now!</p>
 
                 <div class="flex flex-col gap-4">
                     <div class="flex">
