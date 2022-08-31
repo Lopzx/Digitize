@@ -106,6 +106,8 @@
 <section class="flex justify-center items-center content-center tablet:mx-16 mx-8 h-full">
     <div class="flex flex-col tablet:gap-8 gap-4 justify-center items-center bg-white laptop:h-[75vh] h-[85vh] laptop:w-fit w-full rounded-3xl tablet:px-12 px-6 py-8 tablet:my-16 my-8">
         <div>
+            <h1 class="text-purple tablet:text-4xl text-2xl font-semibold">Participant</h1>
+        </div>
             <!-- Search -->
             <form action="{{route('search1')}}" method="GET" class="input-group row">
                 <div class="bg-slate-200 w-full tablet:py-2 py-1 tablet:px-8 px-4 rounded-full flex gap-4 items-center">
@@ -117,8 +119,7 @@
                     {{-- <input type="text" name="cari" placeholder="Search" value=""/>
                     <button type="submit" class="btn btn-primary">Search</button> --}}
             </form>
-            <h1 class="text-purple tablet:text-4xl text-2xl font-semibold">Participant</h1>
-        </div>
+
         <table class="flex flex-col border-collapse font-poppins laptop:w-full tablet:w-[44rem] w-full h-full mx-6 tablet:overflow-x-hidden overflow-x-scroll overflow-y-scroll">
             <thead class="w-fit whitespace-nowrap">
                 <tr class="text-purple tablet:text-sm text-xs font-semibold flex items-center gap-4 py-2 tablet:px-8 px-0">

@@ -98,7 +98,7 @@
 
                     <div class="flex tablet:flex-row flex-col text-center gap-2 tablet:text-sm text-xs justify-center">
                         <p>Don't have an account yet?</p>
-                        <a href="register.html" class="text-purple">Register Now</a>
+                        <a href="register" class="text-purple">Register Now</a>
                     </div>
 
                     <div class="flex justify-center">
