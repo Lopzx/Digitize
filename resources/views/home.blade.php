@@ -214,7 +214,7 @@
                     <!-- Left Section -->
                     <div class="flex flex-col gap-6 w-full justify-between">
                         <div>
-                            <h4 class="tablet:text-left text-center tablet:text-lg text-sm font-semibold">Have any questions for us? <br> Come and message us your questions!</h4>
+                            <h4 class="tablet:text-left text-center tablet:text-lg text-sm font-semibold">We are very approachable and would love to speak to you.</h4>
                         </div>
                         <div class="flex flex-col gap-6 w-full">
                             <!-- Name -->
@@ -262,7 +262,7 @@
                             </div>
                             <div class="flex gap-3 items-center tablet:text-lg text-sm">
                                 <img src="asset/home/location.png" alt="Location" class="tablet:h-8 h-6">
-                                <p>Jl. Raya Kb. Jeruk No.27</p>
+                                <p>Jl. S. Parman No.12, Jakarta Barat, DKI Jakarta, Indonesia</p>
                             </div>
                             <div class="flex gap-3 items-center tablet:text-lg text-sm">
                                 <img src="asset/home/time.png" alt="Time" class="tablet:h-8 h-6">
