@@ -55,7 +55,7 @@ registerForm.addEventListener("submit", (e) => {
     shouldValidate = true;
     validateInputs();
     if (isFormValid) {
-        //
+        registerForm.submit()
     }
 })
 
