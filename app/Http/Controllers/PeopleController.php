@@ -10,7 +10,8 @@ class PeopleController extends Controller
 {
 
     public function getCreatePage(){
-        return view('viewParticipant');
+        $peoples = People::all();
+        return view('viewParticipant', ['peoples'=>$peoples]);
     }
 
     public function createPeople(PeopleRequest $request){
@@ -30,8 +31,8 @@ class PeopleController extends Controller
     }
 
     public function getPeople(){
-        $peoples = People::paginate(3);
-        // $people = People::all();
+        // $peoples = People::paginate(3);
+        $peoples = People::all();
         return view('viewParticipant', ['peoples'=> $peoples]);
     }
 
@@ -65,7 +66,7 @@ class PeopleController extends Controller
             'addEmail' => $request->addEmail,
             'addDob' => $request->addDob,
             'addCategory' => $request->addCategory,
-            'addImage'=> $fileName,
+            'addImage'=> $fileName
         ]);
 
         return redirect(route('getPeople'));

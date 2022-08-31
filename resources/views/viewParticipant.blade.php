@@ -131,6 +131,7 @@
                 </tr>
             </thead>
             <tbody class="w-fit">
+                @if(isset($peoples))
                 @foreach ($peoples as $people)
                 <tr class="flex items-center text-center gap-4 py-2 tablet:px-8 px-0">
                     <td class="tablet:text-sm text-xs font-medium tablet:w-8 w-6">{{ $people->id }}</td>
@@ -159,9 +160,9 @@
                     <td class="tablet:text-sm text-xs font-medium tablet:w-32 w-16">{{ $people->addCategory }}</td>
                 </tr>
                 @endforeach
+                @endif
             </tbody>
         </table>
-        {{ $peoples->links() }}
 
         <div class="flex justify-center">
             <button id="add-btn" class="bg-gradient text-center tablet:text-xl text-base text-white font-semibold py-1 px-16 rounded-lg">Add Participant</button>

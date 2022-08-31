@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PeopleController;
+use App\Http\Controllers\VoteController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -33,6 +34,12 @@ Route::delete('/delete-people/{id}', [PeopleController::class, 'deletePeople'])-
 Route::get('/update-people/{id}', [PeopleController::class, 'getPeopleById'])->name('getPeopleById');
 
 Route::patch('/update-people/{id}', [PeopleController::class, 'updatePeople'])->name('updatePeople');
+
+Route::get('/vote-song', [VoteController::class, 'getSongPage'])->name('getSong');
+
+Route::get('/vote-art', [VoteController::class, 'getArtPage'])->name('getArt');
+
+Route::get('/vote-dance', [VoteController::class, 'getDancePage'])->name('getDance');
 
 // vaness
 Route::get('/dashboard', function () {

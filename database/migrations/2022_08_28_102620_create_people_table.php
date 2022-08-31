@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('addDob')->nullable();
             $table->string('addCategory')->nullable();
             $table->string('addImage');
+            $table->integer('vote')->default(0);
             $table->timestamps();
         });
     }
