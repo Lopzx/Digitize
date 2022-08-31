@@ -121,7 +121,7 @@
         <!-- Hero Section -->
         <div id="Art" class="w-full h-screen bg-cover bg-center flex justify-between flex-col items-center pt-60 tablet:pt-72" style="background-image: url({{asset('asset/hero_section/Hero-Art.png')}})">
             <div class="text-white text-center flex justify-center items-center text-base max-w-xs px-6 tablet:text-xl tablet:max-w-2xl tablet:px-24">
-                <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim magna egestas lobortis massa sagittis gravida.</h1>
+                <h1>Digitize held a drawing competition with the freedom of the tools used for each participant. You can vote for the work that you think is the best.</h1>
             </div>
             <div class="flex justify-center items-center flex-row text-base px-6 pb-24 space-x-8 tablet:space-x-32 tablet:text-2xl tablet:pb-28 tablet:px-24">
                 <a href="#" class="text-white font-medium bg-gradient py-2 px-6 rounded-xl tablet:py-4 tablet:px-8 tablet:rounded-xl">Participate</a>
@@ -259,7 +259,7 @@
         <!-- Hero Section -->
         <div id="Song" class="hidden w-full h-screen bg-cover bg-center flex justify-between flex-col items-center pt-60 tablet:pt-72" style="background-image: url({{asset('asset/hero_section/Hero-Art.png')}})">
             <div class="text-white text-center flex justify-center items-center text-base max-w-xs px-6 tablet:text-xl tablet:max-w-2xl tablet:px-24">
-                <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim magna egestas lobortis massa sagittis gravida.</h1>
+                <h1>Digitalize is holding a singing competition. The songs that are sung are up to the participants. You can vote for the work that you think is the best.</h1>
             </div>
             <div class="flex justify-center items-center flex-row text-base px-6 pb-24 space-x-8 tablet:space-x-32 tablet:text-2xl tablet:pb-28 tablet:px-24">
                 <a href="#" class="text-white font-medium bg-gradient py-2 px-6 rounded-xl tablet:py-4 tablet:px-8 tablet:rounded-xl">Participate</a>
@@ -307,7 +307,7 @@
         <!-- Hero Section -->
         <div id="Dance" class="hidden w-full h-screen bg-cover bg-center flex justify-between flex-col items-center pt-60 tablet:pt-72" style="background-image: url(../../public/asset/hero_section/Hero-Dance.png)">
             <div class="text-white text-center flex justify-center items-center text-base max-w-xs px-6 tablet:text-xl tablet:max-w-2xl tablet:px-24">
-                <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim magna egestas lobortis massa sagittis gravida.</h1>
+                <h1>Digitize held a dance competition and the choice of songs was up to the participants. You can vote for the work that you think is the best.</h1>
             </div>
             <div class="flex justify-center items-center flex-row text-base px-6 pb-24 space-x-8 tablet:space-x-32 tablet:text-2xl tablet:pb-28 tablet:px-24">
                 <a href="#" class="text-white font-medium bg-gradient py-2 px-6 rounded-xl tablet:py-4 tablet:px-8 tablet:rounded-xl">Participate</a>

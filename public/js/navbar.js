@@ -1,19 +1,4 @@
-// Logout Popup
-let logoutPopup = document.querySelector("#logout-popup");
-let logoutBtn = document.querySelector("#logout-btn");
-let logoutSidebarBtn = document.querySelector("#logout-sidebar-btn");
-let logoutCancel = document.querySelector("#logout-cancel")
 
-logoutBtn.onclick = function () {
-    logoutPopup.classList.remove("hidden");
-}
-logoutSidebarBtn.onclick = function (e) {
-    e.preventDefault();
-    logoutPopup.classList.remove("hidden");
-}
-logoutCancel.onclick = function () {
-    logoutPopup.classList.add("hidden");
-}
 
 // Sidebar
 let sidebarMenu = document.querySelector("#sidebar-menu");
@@ -61,4 +46,20 @@ window.onclick = function (close) {
     ) {
         navbarMenu.classList.add("hidden");
     }
+}
+// Logout Popup
+let logoutPopup = document.querySelector("#logout-popup");
+let logoutBtn = document.querySelector("#logout-btn");
+let logoutSidebarBtn = document.querySelector("#logout-sidebar-btn");
+let logoutCancel = document.querySelector("#logout-cancel")
+
+logoutBtn.onclick = function () {
+    logoutPopup.classList.remove("hidden");
+}
+logoutSidebarBtn.onclick = function (e) {
+    e.preventDefault();
+    logoutPopup.classList.remove("hidden");
+}
+logoutCancel.onclick = function () {
+    logoutPopup.classList.add("hidden");
 }
